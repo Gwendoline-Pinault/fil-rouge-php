@@ -1,0 +1,17 @@
+:root {
+    background-color: rgb(255, 252, 247);
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.table-of-content {
+    background-color: bisque;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
