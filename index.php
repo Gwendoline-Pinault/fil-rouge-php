@@ -18,6 +18,12 @@
         'author' => 'mathieu.nebra@exemple.com',
         'is_enabled' => true,
     ],
+    [
+      'title' => 'Lasagnes',
+      'recipe' => 'Etape 1 : des pâtes à lasagnes.',
+      'author' => 'luigi.pasta@exemple.com',
+      'is_enabled' => true,
+    ]
   ];
 
   $users = [
@@ -69,7 +75,7 @@
 -->
 
 <?php 
-// On parcourt le tableau $recipes
+/* // On parcourt le tableau $recipes
 foreach ($recipes as $recipe){
 
   // Je vérifie si la clé 'is_enabled' existe dans l'élément du tableau
@@ -83,9 +89,44 @@ foreach ($recipes as $recipe){
       <?php 
     }
   } 
+} */
+
+// On définit les fonctions qui vont faire la même chose qu'au-dessus.
+
+/** isValidRecipe : vérifie si la clé 'is_enabled' existe dans le tableau fourni et renvoie le booléen correspondant. */
+function isValidRecipe(array $recipe) : bool {
+  if (array_key_exists('is_enabled', $recipe)) {
+    $isEnabled = $recipe['is_enabled'];
+  }
+  else {
+    $isEnabled = false;
+  }
+
+  return $isEnabled;
 }
 
-?>
+/** getRecipes : génère un tableau comprenant les recettes autorisées en fonction du tableau fourni en entrée et renvoie le tableau en résultat. */
+// On précise le type du paramètre et celui du retour.
+function getRecipes(array $recipes) : array {
+  $validRecipes = [];
+
+  foreach($recipes as $recipe) {
+    if (isValidRecipe($recipe)) {
+      $validRecipes[] = $recipe;
+    }
+  }
+
+  return $validRecipes;
+}
+
+// Affichage du rendu visuel en fonction des recettes autorisées.
+// rappel : on finit la ligne par ':' à la place des accolades pour écrire du HTML derrière.
+foreach(getRecipes($recipes) as $recipe) : ?> 
+  <h2> <?php echo $recipe['title']; ?> </h2>
+  <p> <?php echo $recipe['recipe']; ?> </p>
+  <em> <?php echo $recipe['author']; ?> </em>
+<?php endforeach; ?>
+
 
 <!-- <div class="box" aria-label="Exemples de manipulations de texte">
   <h2>Tests d'affichage</h2>
