@@ -1,6 +1,10 @@
 :root {
     background-color: rgb(255, 252, 247);
-    padding: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -24,4 +28,26 @@ li {
     border: 1px solid black;
     padding: 10px;
     margin: 20px 0;
+}
+
+#menu {
+    border-bottom: 2px solid black;
+    display: flex;
+    margin: 0;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item{
+    margin: 0 10px;
+}
+
+.container {
+    padding: 10px;
 }
