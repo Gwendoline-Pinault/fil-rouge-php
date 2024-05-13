@@ -94,6 +94,9 @@ function getRecipes(array $recipes): array
 </head>
 
 <body>
+  <!-- Insertion du menu de navigation créé dans un composant à part -->
+  <?php require_once(__DIR__ . '/header.php'); ?>
+
   <h1>Affichage des recettes</h1>
 
   <?php
