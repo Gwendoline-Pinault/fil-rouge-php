@@ -1,11 +1,12 @@
 <!-- Menu de navigation type en PHP placé dans un composant à part -->
 <nav id="menu">
+  <p>Site de recettes</p>
   <ul class="navbar">
     <li class="nav-item">
-      <a href="index.php" aria-current="page">Home</a>
+      <a href="index.php" aria-current="page" class="link">Home</a>
     </li>
     <li class="nav-item">
-      <a href="contact.php">Contact</a>
+      <a href="contact.php" class="link">Contact</a>
     </li>
   </ul>
 </nav>
