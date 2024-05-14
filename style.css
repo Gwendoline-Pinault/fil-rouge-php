@@ -1,9 +1,9 @@
 :root {
-    background-color: rgb(251, 255, 255);
+    background-color: #ffffff;
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --color: rgb(20, 55, 252);
-    --color-hover: rgb(70, 98, 255);
+    --color: #1437fc;
+    --color-hover: #4662ff;
 }
 
 body {
