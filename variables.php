@@ -40,6 +40,6 @@ $recipes = [
     'title' => 'Salade Romaine',
     'recipe' => 'Etape 1 : prenez une belle salade',
     'author' => 'lorene.castor@exemple.com',
-    'is_enabled' => true,
+    'is_enabled' => false,
   ],
 ];

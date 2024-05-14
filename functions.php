@@ -16,15 +16,19 @@ function displayAuthor(string $authorEmail, array $users): string
 // On définit les fonctions qui vont faire la même chose qu'au-dessus.
 
 /** isValidRecipe : vérifie si la clé 'is_enabled' existe dans le tableau fourni et renvoie le booléen correspondant. */
-function isValidRecipe(array $recipes): bool
-{
-  return $recipes['is_enabled'];
+function isValidRecipe(array $recipe): bool {
+  if (array_key_exists('is_enabled', $recipe)){
+    $isEnabled = $recipe['is_enabled'];
+  }
+  else {
+    $isEnabled = false;
+  }
+  return $isEnabled;
 }
 
 /** getRecipes : génère un tableau comprenant les recettes autorisées en fonction du tableau fourni en entrée et renvoie le tableau en résultat. */
 // On précise le type du paramètre et celui du retour.
-function getRecipes(array $recipes): array
-{
+function getRecipes(array $recipes): array {
   $validRecipes = [];
 
   foreach ($recipes as $recipe) {
