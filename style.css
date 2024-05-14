@@ -1,7 +1,9 @@
 :root {
     background-color: rgb(255, 252, 247);
     font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --color: rgb(20, 55, 252);
+    --color-hover: rgb(70, 98, 255);
 }
 
 body {
@@ -12,6 +14,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 3rem;
+    font-size: 1.8rem;
 }
 
 .table-of-content {
@@ -59,9 +62,53 @@ li {
 }
 
 .link:hover {
-    color: rgb(55, 85, 255);
+    color: var(--color);
 }
 
 .container {
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-subcontainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control {
+    padding: 5px;
+}
+
+.form-text {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+#message {
+    min-height: 200px;
+}
+
+.button {
+    background-color: var(--color);
+    color: white;
+    font-weight: bold;
     padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.button:hover {
+    background-color: var(--color-hover);
 }
