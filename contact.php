@@ -9,7 +9,7 @@
 <body>
   <?php require_once(__DIR__ . '/header.php'); ?>
   <h1>Contact</h1>
-  <form action="submit" class="container form">
+  <form action="submit_contact.php" method="GET" class="container form">
     <div class="form-subcontainer">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email" aria-describedby="email-help">
@@ -17,7 +17,7 @@
     </div>
     <div class="form-subcontainer">
       <label for="message" class="form-label">Votre message</label>
-      <textarea name="form-control" id="message" name="message" placeholder="Exprimez-vous"></textarea>
+      <textarea class="form-control" id="message" name="message" placeholder="Exprimez-vous"></textarea>
     </div>
     <button type="submit" class="button">Envoyer</button>
   </form>
