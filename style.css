@@ -123,6 +123,12 @@ li {
 .flex-center {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
 }
 
 .flexcol-center {
