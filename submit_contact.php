@@ -16,7 +16,7 @@
     $uploaded = false;
     // Variable concernant le fichier transmis (tableau)
     // Vérification si fichier transmis via formulaire
-    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0){
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === 0){
         if ($_FILES['image']['size'] > 1000000){
             echo('Le fichier est trop lourd');
             return;
