@@ -43,3 +43,5 @@ $recipes = [
     'is_enabled' => false,
   ],
 ];
+
+$isConnected = false;

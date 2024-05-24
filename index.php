@@ -18,6 +18,11 @@ require_once(__DIR__ . '/functions.php');
   <?php require_once(__DIR__ . '/header.php'); ?>
 
   <div class="container">
+    <?php require_once(__DIR__ . '/login.php'); ?>
+
+    <!-- Si l'utilisateur est connecté, on affiche les recettes : -->
+    <?php if ($isConnected) : ?>
+
     <h1>Site de recettes</h1>
     <?php
     // Affichage du rendu visuel en fonction des recettes autorisées.
@@ -29,6 +34,8 @@ require_once(__DIR__ . '/functions.php');
         <em> <?php echo displayAuthor($recipe['author'], $users); ?> </em>
       </article>
     <?php endforeach; ?>
+
+    <?php endif; ?>
   </div>
 
 </body>
