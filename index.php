@@ -18,24 +18,16 @@ require_once(__DIR__ . '/functions.php');
   <?php require_once(__DIR__ . '/header.php'); ?>
 
   <div class="container">
-    <?php require_once(__DIR__ . '/login.php'); ?>
+    <?php 
+    if ($isConnected === false) {
+      require_once(__DIR__ . '/login.php'); 
+    }
+    ?>
 
     <!-- Si l'utilisateur est connecté, on affiche les recettes : -->
-    <?php if ($isConnected) : ?>
-
-    <h1>Site de recettes</h1>
-    <?php
-    // Affichage du rendu visuel en fonction des recettes autorisées.
-    // rappel : on finit la ligne par ':' à la place des accolades pour écrire du HTML derrière.
-    foreach (getRecipes($recipes) as $recipe) : ?>
-      <article>
-        <h2> <?php echo $recipe['title']; ?> </h2>
-        <p> <?php echo $recipe['recipe']; ?> </p>
-        <em> <?php echo displayAuthor($recipe['author'], $users); ?> </em>
-      </article>
-    <?php endforeach; ?>
-
-    <?php endif; ?>
+    <?php if ($isConnected){ ?>
+      <?php require_once(__DIR__ . '/recettes.php');
+    } ?>
   </div>
 
 </body>
