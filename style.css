@@ -1,6 +1,6 @@
 :root {
     background-color: #ffffff;
-    font-size: 15px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     --color: #2041ff;
     --color-hover: #0724cc;
@@ -38,11 +38,13 @@ li {
 #menu {
     display: flex;
     margin: 0;
-    padding: 10px;
     display: flex;
     align-items: center;
     background-color: rgb(193, 236, 248);
     font-size: 0.9rem;
+    justify-content: space-between;
+    position: sticky;
+    padding: 10px;
 }
 
 .navbar {
@@ -163,4 +165,9 @@ li {
 .login form {
     display: flex;
     width: 50%;
+}
+
+.size-full {
+    height: 100vh;
+    width: 100vw;
 }

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $postData = $_POST;
 
     if (
