@@ -1,4 +1,3 @@
-<h1>Site de recettes</h1>
 <?php
 // Affichage du rendu visuel en fonction des recettes autorisées.
 // rappel : on finit la ligne par ':' à la place des accolades pour écrire du HTML derrière.
