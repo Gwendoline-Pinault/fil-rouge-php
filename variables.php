@@ -1,5 +1,5 @@
 <?php
-$users = [
+/* $users = [
   [
     'full_name' => 'Mickaël Andrieu',
     'email' => 'mickael.andrieu@exemple.com',
@@ -48,6 +48,12 @@ $recipes = [
     'author' => 'lorene.castor@exemple.com',
     'is_enabled' => false,
   ],
-];
+]; */
+
+$sqlQuery = 'SELECT * FROM recipes WHERE is_enabled = TRUE';
+
+$recipesStatement = $mysqlClient->prepare($sqlQuery);
+$recipesStatement->execute();
+$recipes = $recipesStatement->fetchAll();
 
 $isConnected = false;

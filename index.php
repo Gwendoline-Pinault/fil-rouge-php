@@ -1,8 +1,11 @@
 <!-- Inclusion des variables et fonctions -->
 <?php
 session_start(); // démarre la session pour l'utilisateur qui arrive sur le site.
+require_once(__DIR__ . '/config/mysql.php');
+require_once(__DIR__ . '/databaseconnect.php') ;
 require_once(__DIR__ . '/variables.php');
 require_once(__DIR__ . '/functions.php');
+require_once(__DIR__ . '/request.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +25,15 @@ require_once(__DIR__ . '/functions.php');
     <h1>Site de recettes</h1>
 
     <!-- Affichage des recettes -->
-      <?php require_once(__DIR__ . '/recettes.php'); ?>
+    <?php 
+      foreach (getRecipes($recipes) as $recipe) : ?>
+        <article>
+          <h2> <?php echo $recipe['title']; ?> </h2>
+          <p> <?php echo $recipe['recipe']; ?> </p>
+          <em> <?php echo $recipe['author']; ?> </em>
+        </article>
+      <?php endforeach; 
+    ?>
   </div>
 
 </body>
