@@ -12,12 +12,13 @@ $usersStatement -> execute();
 $users = $usersStatement -> fetchAll();
 
 // Récupération du nom de l'utilisateur connecté 
-
-$queryLoggedUser = 'SELECT full_name FROM users WHERE email = :email';
-$loggedUserStatement = $mysqlClient -> prepare($queryLoggedUser);
-$loggedUserStatement -> execute(['email' => $_SESSION['LOGGED_USER']['email']]);
-$loggedUser = $loggedUserStatement -> fetchAll();
-$userFullname = $loggedUser[0][0]; // la sortie du fetch donne un tableau de tableau, on récupère uniquement la string du résultat
+if(isset($_SESSION['LOGGED_USER'])) {
+  $queryLoggedUser = 'SELECT full_name FROM users WHERE email = :email';
+  $loggedUserStatement = $mysqlClient -> prepare($queryLoggedUser);
+  $loggedUserStatement -> execute(['email' => $_SESSION['LOGGED_USER']['email']]);
+  $loggedUser = $loggedUserStatement -> fetchAll();
+  $userFullname = $loggedUser[0][0]; // la sortie du fetch donne un tableau de tableau, on récupère uniquement la string du résultat
+}
 
 // Variable de gestion du statut "Connecté"
 $isConnected = false;
