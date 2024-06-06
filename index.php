@@ -1,10 +1,10 @@
 <!-- Inclusion des variables et fonctions -->
 <?php
 session_start(); // démarre la session pour l'utilisateur qui arrive sur le site.
-require_once(__DIR__ . '\config\mysql.php');
-require_once(__DIR__ . '\databaseconnect.php') ;
-require_once(__DIR__ . '\variables.php');
-require_once(__DIR__ . '\functions.php');
+require_once(__DIR__ . '/config/mysql.php');
+require_once(__DIR__ . '/databaseconnect.php') ;
+require_once(__DIR__ . '/variables.php');
+require_once(__DIR__ . '/functions.php');
 ?>
 
 <!DOCTYPE html>

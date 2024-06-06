@@ -12,9 +12,12 @@
     </ul>
   </div>
 
-  <?php if(isset($_SESSION['LOGGED_USER'])) { ?>
-    <a class="button" href="logout.php">Déconnexion</a>
-  <?php } else { ?>
-    <a class="button" href="login.php">Connexion</a>
-  <?php }?>
+  <div class="flex-row">
+    <?php if(isset($_SESSION['LOGGED_USER'])) { ?>
+      <p class="nav-item"><?php echo($userFullname) ?></p>
+      <a class="button" href="logout.php">Déconnexion</a>
+    <?php } else { ?>
+      <a class="button" href="login.php">Connexion</a>
+    <?php }?>
+  </div>
 </nav>
